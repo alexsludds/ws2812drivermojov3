@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/sludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/planAhead/ws2812mojov3/ws2812mojov3.runs/impl_1/mojo_top_0_routed.ncd
+OUTFILE=/home/sludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/planAhead/ws2812mojov3/ws2812mojov3.runs/impl_1/mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/sludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/planAhead/ws2812mojov3/ws2812mojov3.runs/impl_1
+LICENSE=WebPack
+USER_INFO=211211131_0_0_413
