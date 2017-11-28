@@ -15,7 +15,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -25,22 +24,1164 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
 
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 63 paths analyzed, 26 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.955ns.
+--------------------------------------------------------------------------------
+Slack:                  16.045ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_6 (FF)
+  Destination:          send_bit/articuno (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.477ns (Levels of Logic = 1)
+  Clock Path Skew:      0.557ns (1.178 - 0.621)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_6 to send_bit/articuno
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.AQ      Tcko                  0.476   send_bit/p[6]
+                                                       send_bit/p_6
+    SLICE_X15Y19.D6      net (fanout=5)        0.861   send_bit/p[6]
+    SLICE_X15Y19.D       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p[6]_GND_8_o_LessThan_6_o1
+    OLOGIC_X6Y1.D1       net (fanout=1)        1.703   send_bit/p[6]_GND_8_o_LessThan_6_o
+    OLOGIC_X6Y1.CLK0     Todck                 1.178   articuno
+                                                       send_bit/articuno
+    -------------------------------------------------  ---------------------------
+    Total                                      4.477ns (1.913ns logic, 2.564ns route)
+                                                       (42.7% logic, 57.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.195ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_4 (FF)
+  Destination:          send_bit/articuno (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.327ns (Levels of Logic = 1)
+  Clock Path Skew:      0.557ns (1.178 - 0.621)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_4 to send_bit/articuno
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.AQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_4
+    SLICE_X15Y19.D2      net (fanout=5)        0.757   send_bit/p[4]
+    SLICE_X15Y19.D       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p[6]_GND_8_o_LessThan_6_o1
+    OLOGIC_X6Y1.D1       net (fanout=1)        1.703   send_bit/p[6]_GND_8_o_LessThan_6_o
+    OLOGIC_X6Y1.CLK0     Todck                 1.178   articuno
+                                                       send_bit/articuno
+    -------------------------------------------------  ---------------------------
+    Total                                      4.327ns (1.867ns logic, 2.460ns route)
+                                                       (43.1% logic, 56.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.328ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_3 (FF)
+  Destination:          send_bit/articuno (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.195ns (Levels of Logic = 1)
+  Clock Path Skew:      0.558ns (1.178 - 0.620)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_3 to send_bit/articuno
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.DQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_3
+    SLICE_X15Y19.D3      net (fanout=6)        0.625   send_bit/p[3]
+    SLICE_X15Y19.D       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p[6]_GND_8_o_LessThan_6_o1
+    OLOGIC_X6Y1.D1       net (fanout=1)        1.703   send_bit/p[6]_GND_8_o_LessThan_6_o
+    OLOGIC_X6Y1.CLK0     Todck                 1.178   articuno
+                                                       send_bit/articuno
+    -------------------------------------------------  ---------------------------
+    Total                                      4.195ns (1.867ns logic, 2.328ns route)
+                                                       (44.5% logic, 55.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_5 (FF)
+  Destination:          send_bit/articuno (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.877ns (Levels of Logic = 1)
+  Clock Path Skew:      0.557ns (1.178 - 0.621)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_5 to send_bit/articuno
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.BQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_5
+    SLICE_X15Y19.D4      net (fanout=5)        0.307   send_bit/p[5]
+    SLICE_X15Y19.D       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p[6]_GND_8_o_LessThan_6_o1
+    OLOGIC_X6Y1.D1       net (fanout=1)        1.703   send_bit/p[6]_GND_8_o_LessThan_6_o
+    OLOGIC_X6Y1.CLK0     Todck                 1.178   articuno
+                                                       send_bit/articuno
+    -------------------------------------------------  ---------------------------
+    Total                                      3.877ns (1.867ns logic, 2.010ns route)
+                                                       (48.2% logic, 51.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.453ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_2 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.512ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_2 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.CQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_2
+    SLICE_X14Y19.C2      net (fanout=6)        0.738   send_bit/p[2]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.512ns (1.206ns logic, 1.306ns route)
+                                                       (48.0% logic, 52.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.483ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_2 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.482ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_2 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.CQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_2
+    SLICE_X14Y19.C2      net (fanout=6)        0.738   send_bit/p[2]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.482ns (1.206ns logic, 1.276ns route)
+                                                       (48.6% logic, 51.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.565ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_0 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.400ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_0 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.AQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_0
+    SLICE_X14Y19.C4      net (fanout=8)        0.626   send_bit/p[0]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.400ns (1.206ns logic, 1.194ns route)
+                                                       (50.2% logic, 49.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.595ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_0 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.370ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_0 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.AQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_0
+    SLICE_X14Y19.C4      net (fanout=8)        0.626   send_bit/p[0]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.370ns (1.206ns logic, 1.164ns route)
+                                                       (50.9% logic, 49.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.611ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_4 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.336ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_4 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.AQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_4
+    SLICE_X14Y19.C1      net (fanout=5)        0.562   send_bit/p[4]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.336ns (1.206ns logic, 1.130ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.630ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_2 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.335ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_2 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.CQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_2
+    SLICE_X14Y19.C2      net (fanout=6)        0.738   send_bit/p[2]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.335ns (1.206ns logic, 1.129ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.641ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_4 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.306ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_4 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.AQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_4
+    SLICE_X14Y19.C1      net (fanout=5)        0.562   send_bit/p[4]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.306ns (1.206ns logic, 1.100ns route)
+                                                       (52.3% logic, 47.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.706ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_6 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.241ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_6 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.AQ      Tcko                  0.476   send_bit/p[6]
+                                                       send_bit/p_6
+    SLICE_X14Y19.C3      net (fanout=5)        0.421   send_bit/p[6]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.241ns (1.252ns logic, 0.989ns route)
+                                                       (55.9% logic, 44.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.709ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_3 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.256ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_3 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.DQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_3
+    SLICE_X14Y19.CX      net (fanout=6)        0.693   send_bit/p[3]
+    SLICE_X14Y19.CMUX    Tcxc                  0.192   send_bit/p[6]
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.256ns (0.995ns logic, 1.261ns route)
+                                                       (44.1% logic, 55.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.717ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_1 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.248ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_1 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.BQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_1
+    SLICE_X14Y19.C5      net (fanout=7)        0.474   send_bit/p[1]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.248ns (1.206ns logic, 1.042ns route)
+                                                       (53.6% logic, 46.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.736ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_6 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.211ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_6 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.AQ      Tcko                  0.476   send_bit/p[6]
+                                                       send_bit/p_6
+    SLICE_X14Y19.C3      net (fanout=5)        0.421   send_bit/p[6]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.211ns (1.252ns logic, 0.959ns route)
+                                                       (56.6% logic, 43.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.739ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_3 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.226ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_3 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.DQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_3
+    SLICE_X14Y19.CX      net (fanout=6)        0.693   send_bit/p[3]
+    SLICE_X14Y19.CMUX    Tcxc                  0.192   send_bit/p[6]
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.226ns (0.995ns logic, 1.231ns route)
+                                                       (44.7% logic, 55.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.742ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_0 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.223ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_0 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.AQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_0
+    SLICE_X14Y19.C4      net (fanout=8)        0.626   send_bit/p[0]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.223ns (1.206ns logic, 1.017ns route)
+                                                       (54.3% logic, 45.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.747ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_1 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.218ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_1 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.BQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_1
+    SLICE_X14Y19.C5      net (fanout=7)        0.474   send_bit/p[1]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.218ns (1.206ns logic, 1.012ns route)
+                                                       (54.4% logic, 45.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.788ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_4 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.159ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_4 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.AQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_4
+    SLICE_X14Y19.C1      net (fanout=5)        0.562   send_bit/p[4]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.159ns (1.206ns logic, 0.953ns route)
+                                                       (55.9% logic, 44.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.816ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_5 (FF)
+  Destination:          send_bit/p_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.131ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_5 to send_bit/p_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.BQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_5
+    SLICE_X14Y19.C6      net (fanout=5)        0.357   send_bit/p[5]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.C4      net (fanout=4)        0.568   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_2_rstpot
+                                                       send_bit/p_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.131ns (1.206ns logic, 0.925ns route)
+                                                       (56.6% logic, 43.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.817ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_5 (FF)
+  Destination:          send_bit/p_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.148ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_5 to send_bit/p_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.BQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_5
+    SLICE_X15Y19.C1      net (fanout=5)        0.734   send_bit/p[5]
+    SLICE_X15Y19.C       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p_5_rstpot_G
+    SLICE_X15Y19.B4      net (fanout=1)        0.352   send_bit/N13
+    SLICE_X15Y19.CLK     Tas                   0.373   send_bit/p[5]
+                                                       send_bit/p_5_rstpot1
+                                                       send_bit/p_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.148ns (1.062ns logic, 1.086ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.831ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_2 (FF)
+  Destination:          send_bit/p_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.118ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.016ns (0.293 - 0.309)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_2 to send_bit/p_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.CQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_2
+    SLICE_X14Y19.C2      net (fanout=6)        0.738   send_bit/p[2]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X15Y19.A6      net (fanout=4)        0.174   send_bit/_n0032
+    SLICE_X15Y19.CLK     Tas                   0.373   send_bit/p[5]
+                                                       send_bit/p_4_rstpot
+                                                       send_bit/p_4
+    -------------------------------------------------  ---------------------------
+    Total                                      2.118ns (1.206ns logic, 0.912ns route)
+                                                       (56.9% logic, 43.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.846ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_5 (FF)
+  Destination:          send_bit/p_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.101ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_5 to send_bit/p_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.BQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_5
+    SLICE_X14Y19.C6      net (fanout=5)        0.357   send_bit/p[5]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.D4      net (fanout=4)        0.538   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_3_rstpot
+                                                       send_bit/p_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.101ns (1.206ns logic, 0.895ns route)
+                                                       (57.4% logic, 42.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.883ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_6 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.064ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.292 - 0.310)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_6 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.AQ      Tcko                  0.476   send_bit/p[6]
+                                                       send_bit/p_6
+    SLICE_X14Y19.C3      net (fanout=5)        0.421   send_bit/p[6]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.064ns (1.252ns logic, 0.812ns route)
+                                                       (60.7% logic, 39.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.886ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_3 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.079ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_3 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.DQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_3
+    SLICE_X14Y19.CX      net (fanout=6)        0.693   send_bit/p[3]
+    SLICE_X14Y19.CMUX    Tcxc                  0.192   send_bit/p[6]
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.079ns (0.995ns logic, 1.084ns route)
+                                                       (47.9% logic, 52.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.894ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_1 (FF)
+  Destination:          send_bit/p_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.071ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_1 to send_bit/p_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.BQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_1
+    SLICE_X14Y19.C5      net (fanout=7)        0.474   send_bit/p[1]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X13Y19.B6      net (fanout=4)        0.391   send_bit/_n0032
+    SLICE_X13Y19.CLK     Tas                   0.373   send_bit/p[3]
+                                                       send_bit/p_1_rstpot
+                                                       send_bit/p_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.071ns (1.206ns logic, 0.865ns route)
+                                                       (58.2% logic, 41.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.931ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_6 (FF)
+  Destination:          send_bit/p_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.023ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_6 to send_bit/p_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.AQ      Tcko                  0.476   send_bit/p[6]
+                                                       send_bit/p_6
+    SLICE_X15Y19.C2      net (fanout=5)        0.563   send_bit/p[6]
+    SLICE_X15Y19.C       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p_5_rstpot_G
+    SLICE_X15Y19.B4      net (fanout=1)        0.352   send_bit/N13
+    SLICE_X15Y19.CLK     Tas                   0.373   send_bit/p[5]
+                                                       send_bit/p_5_rstpot1
+                                                       send_bit/p_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.023ns (1.108ns logic, 0.915ns route)
+                                                       (54.8% logic, 45.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.943ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_0 (FF)
+  Destination:          send_bit/p_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.006ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.016ns (0.293 - 0.309)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_0 to send_bit/p_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.AQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_0
+    SLICE_X14Y19.C4      net (fanout=8)        0.626   send_bit/p[0]
+    SLICE_X14Y19.CMUX    Tilo                  0.403   send_bit/p[6]
+                                                       send_bit/_n0032<0>_G
+                                                       send_bit/_n0032<0>
+    SLICE_X15Y19.A6      net (fanout=4)        0.174   send_bit/_n0032
+    SLICE_X15Y19.CLK     Tas                   0.373   send_bit/p[5]
+                                                       send_bit/p_4_rstpot
+                                                       send_bit/p_4
+    -------------------------------------------------  ---------------------------
+    Total                                      2.006ns (1.206ns logic, 0.800ns route)
+                                                       (60.1% logic, 39.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.987ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_2 (FF)
+  Destination:          send_bit/p_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      1.962ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.016ns (0.293 - 0.309)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_2 to send_bit/p_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y19.CQ      Tcko                  0.430   send_bit/p[3]
+                                                       send_bit/p_2
+    SLICE_X15Y19.C4      net (fanout=6)        0.548   send_bit/p[2]
+    SLICE_X15Y19.C       Tilo                  0.259   send_bit/p[5]
+                                                       send_bit/p_5_rstpot_G
+    SLICE_X15Y19.B4      net (fanout=1)        0.352   send_bit/N13
+    SLICE_X15Y19.CLK     Tas                   0.373   send_bit/p[5]
+                                                       send_bit/p_5_rstpot1
+                                                       send_bit/p_5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.962ns (1.062ns logic, 0.900ns route)
+                                                       (54.1% logic, 45.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.987ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               send_bit/p_5 (FF)
+  Destination:          send_bit/p_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      1.967ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: send_bit/p_5 to send_bit/p_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y19.BQ      Tcko                  0.430   send_bit/p[5]
+                                                       send_bit/p_5
+    SLICE_X14Y19.B1      net (fanout=5)        0.757   send_bit/p[5]
+    SLICE_X14Y19.B       Tilo                  0.235   send_bit/p[6]
+                                                       send_bit/p_6_rstpot_G
+    SLICE_X14Y19.A5      net (fanout=1)        0.196   send_bit/N11
+    SLICE_X14Y19.CLK     Tas                   0.349   send_bit/p[6]
+                                                       send_bit/p_6_rstpot1
+                                                       send_bit/p_6
+    -------------------------------------------------  ---------------------------
+    Total                                      1.967ns (1.014ns logic, 0.953ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: articuno/CLK0
+  Logical resource: send_bit/articuno/CK0
+  Location pin: OLOGIC_X6Y1.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: send_bit/p[6]/CLK
+  Logical resource: send_bit/p_6/CK
+  Location pin: SLICE_X14Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[3]/CLK
+  Logical resource: send_bit/p_0/CK
+  Location pin: SLICE_X13Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[3]/CLK
+  Logical resource: send_bit/p_1/CK
+  Location pin: SLICE_X13Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[3]/CLK
+  Logical resource: send_bit/p_2/CK
+  Location pin: SLICE_X13Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[3]/CLK
+  Logical resource: send_bit/p_3/CK
+  Location pin: SLICE_X13Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[5]/CLK
+  Logical resource: send_bit/p_4/CK
+  Location pin: SLICE_X15Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: send_bit/p[5]/CLK
+  Logical resource: send_bit/p_5/CK
+  Location pin: SLICE_X15Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
 
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Fri Jul  7 15:52:41 2017 
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.955|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 63 paths, 0 nets, and 54 connections
+
+Design statistics:
+   Minimum period:   3.955ns{1}   (Maximum frequency: 252.844MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Nov 28 11:32:32 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 380 MB
+Peak Memory Usage: 389 MB
 
 
 

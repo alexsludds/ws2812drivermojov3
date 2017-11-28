@@ -8,6 +8,8 @@
 # Constraints from file : 'mojo.ucf'
 ####################################################################################
 
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50 %;
 
 NET "clk" LOC = P56;
 NET "clk" IOSTANDARD = LVTTL;
@@ -58,6 +60,5 @@ NET "avr_rx" IOSTANDARD = LVTTL;
 NET "avr_rx_busy" LOC = P39;
 NET "avr_rx_busy" IOSTANDARD = LVTTL;
 
-NET "ws2812out" LOC = P51;
-NET "ws2812out" IOSTANDARD = LVTTL;
-NET "ws2812out" PULLUP;
+NET "io" LOC = P51;
+NET "io" IOSTANDARD = LVTTL;

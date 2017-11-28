@@ -1,13 +1,13 @@
-set projDir "/home/sludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/planAhead"
+set projDir "/home/asludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/planAhead"
 set projName "ws2812mojov3"
 set topName top
 set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "/home/sludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/verilog/mojo_top_0.v"]
+set verilogSources [list "/home/asludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/verilog/mojo_top_0.v" "/home/asludds/Dropbox (MIT)/Fall 2017/6.072/ws2812drivermojov3/ws2812mojov3/work/verilog/mojo_top_1.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
-set ucfSources [list "/home/sludds/Dropbox\ (MIT)/Fall\ 2017/6.072/ws2812drivermojov3/ws2812mojov3/constraint/mojo.ucf"]
+set ucfSources [list "/home/asludds/Dropbox\ (MIT)/Fall\ 2017/6.072/ws2812drivermojov3/ws2812mojov3/constraint/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources
 set_property -name {steps.bitgen.args.More Options} -value {-g Binary:Yes -g Compress} -objects [get_runs impl_1]
 set_property steps.map.args.mt on [get_runs impl_1]
